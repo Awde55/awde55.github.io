@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AWDE Engineering</title>
+<meta name="description" content="AWDE Engineering designs and checks concrete and steel structures for buildings in Lebanon and abroad, fully online. Free quote on WhatsApp within 48 hours.">
+<meta name="theme-color" content="#142231">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AWDE Engineering">
+<meta property="og:description" content="Structural design, building assessment and design checking, delivered online. Free quote on WhatsApp.">
+<meta property="og:url" content="https://awde55.github.io/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23F2B705'/%3E%3Cpath d='M9 39 24 10l15 29M14 29.5h20' fill='none' stroke='%23142231' stroke-width='4.5' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='10' r='3' fill='%23F2B705' stroke='%23142231' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"AWDE Engineering","description":"Structural design, building assessment and design checking for concrete and steel buildings, delivered online.","url":"https://awde55.github.io/","telephone":"+96170820910","email":"mohammadawde47@gmail.com","areaServed":"Lebanon","address":{"@type":"PostalAddress","addressCountry":"LB"},"founder":{"@type":"Person","name":"Mohammad Awde","jobTitle":"Structural Engineer"}}
+</script>
+<style>
+:root {
+  /* Layout: a structural drawing sheet. Hero = frame elevation, services and prices = schedules, process = continuous beam on supports, footer = drawing title block. */
+  --paper: #F2F4F3;
+  --paper-2: #E4E9E7;
+  --ink: #142231;
+  --ink-2: #4A5866;
+  --rule: #C2CBC9;
+  --accent: #F2B705;
+  --on-accent: #142231;
+  --accent-line: #B88A00;
+  --night: #142231;
+  --on-night: #F2F4F3;
+  --on-night-2: #AEBBC6;
+  --night-rule: #33465A;
+  --wa: #128C4A;
+  --on-wa: #FFFFFF;
+  --focus: #142231;
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-brand: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --fs-sm: .875rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.25rem;
+  --fs-lg: clamp(1.75rem, 1.2rem + 2vw, 2.625rem);
+  --fs-xl: clamp(2.375rem, 1.3rem + 4.2vw, 4.375rem);
+
+  --gutter-l: max(clamp(16px, 4vw, 40px), env(safe-area-inset-left, 0px));
+  --gutter-r: max(clamp(16px, 4vw, 40px), env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1923;
+    --paper-2: #14222F;
+    --ink: #E7ECEA;
+    --ink-2: #A2B0BB;
+    --rule: #2B3B4A;
+    --accent: #F5C02E;
+    --on-accent: #0E1923;
+    --accent-line: #F5C02E;
+    --night: #08111A;
+    --on-night: #E7ECEA;
+    --on-night-2: #A2B0BB;
+    --night-rule: #26384A;
+    --wa: #128C4A;
+    --on-wa: #FFFFFF;
+    --focus: #F5C02E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1923;
+  --paper-2: #14222F;
+  --ink: #E7ECEA;
+  --ink-2: #A2B0BB;
+  --rule: #2B3B4A;
+  --accent: #F5C02E;
+  --on-accent: #0E1923;
+  --accent-line: #F5C02E;
+  --night: #08111A;
+  --on-night: #E7ECEA;
+  --on-night-2: #A2B0BB;
+  --night-rule: #26384A;
+  --wa: #128C4A;
+  --on-wa: #FFFFFF;
+  --focus: #F5C02E;
+  color-scheme: dark;
+}
+:root[lang="ar"] {
+  --font-display: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 40;
+  background: var(--paper);
+}
+img, svg { max-width: 100%; }
+[hidden] { display: none !important; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+section[id] { scroll-margin-top: 112px; }
+
+.wrap {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-left: var(--gutter-l);
+  padding-right: var(--gutter-r);
+}
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-weight: 600; font-size: 1rem; line-height: 1.1;
+  text-decoration: none; padding: 14px 20px; border-radius: 4px;
+  border: 2px solid transparent; cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: color-mix(in srgb, var(--accent) 82%, var(--on-accent)); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-sm { padding: 10px 14px; font-size: .9375rem; }
+
+/* Header */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.header-inner { display: flex; align-items: center; gap: 8px 18px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); margin-inline-end: auto; }
+.mark { width: 42px; height: 42px; flex: none; }
+.mark .m-truss { fill: none; stroke: var(--ink); stroke-width: 4.2; stroke-linejoin: round; stroke-linecap: round; }
+.mark .m-joint { fill: var(--accent); stroke: var(--ink); stroke-width: 2; }
+.mark .m-support { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; direction: ltr; }
+.brand-name { font-family: var(--font-brand); font-stretch: 125%; font-weight: 800; font-size: 1.3rem; letter-spacing: .06em; }
+.brand-sub { font-family: var(--font-brand); font-size: .6875rem; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-2); margin-top: 5px; }
+.nav { display: flex; gap: 2px; }
+.nav a { text-decoration: none; font-size: .9375rem; font-weight: 500; padding: 8px 10px; border-radius: 4px; color: var(--ink-2); white-space: nowrap; }
+.nav a:hover { color: var(--ink); background: var(--paper-2); }
+.lang-btn {
+  font-family: "IBM Plex Sans Arabic", var(--font-body); font-weight: 600; font-size: .9375rem; line-height: 1;
+  border: 1.5px solid var(--rule); background: transparent; color: var(--ink);
+  padding: 10px 12px; border-radius: 4px; cursor: pointer; min-width: 64px;
+}
+.lang-btn:hover { border-color: var(--ink); }
+@media (max-width: 880px) {
+  .header-inner { flex-wrap: wrap; padding-bottom: 4px; }
+  .nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { padding-inline: 8px; font-size: .875rem; }
+  .nav a:first-child { padding-inline-start: 0; }
+}
+@media (max-width: 560px) { .header-wa { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 6vw, 88px) clamp(56px, 7vw, 104px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(36px, 5vw, 72px); align-items: center; }
+.hero h1 { font-size: var(--fs-xl); font-stretch: 112%; font-weight: 800; line-height: 1.02; letter-spacing: -.015em; }
+:root[lang="ar"] .hero h1 { line-height: 1.3; letter-spacing: 0; font-weight: 700; }
+.lede { margin-top: 24px; font-size: var(--fs-md); line-height: 1.55; color: var(--ink-2); max-width: 34em; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-notes { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 8px; font-size: .9375rem; color: var(--ink-2); }
+.hero-notes li { display: flex; align-items: center; gap: 12px; }
+.hero-notes li::before { content: ""; width: 9px; height: 9px; background: var(--accent); box-shadow: 0 0 0 1px var(--accent-line); flex: none; }
+.hero-figure { margin: 0; min-width: 0; }
+.drawing { display: block; width: 100%; height: auto; direction: ltr; overflow: visible; }
+.hero-figure figcaption { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm); color: var(--ink-2); }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Drawing */
+.d-grid { fill: none; stroke: var(--rule); stroke-width: 1.2; stroke-dasharray: 16 4 2 4; }
+.d-bubble { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+.d-letter { fill: var(--ink); font-family: var(--font-body); font-weight: 600; font-size: 14px; text-anchor: middle; }
+.d-member { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: square; }
+.d-thin { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.d-dim { fill: none; stroke: var(--ink-2); stroke-width: 1; }
+.d-text { fill: var(--ink-2); font-family: var(--font-body); font-weight: 500; font-size: 12px; font-variant-numeric: tabular-nums; }
+.d-text.mid { text-anchor: middle; }
+.d-text.end { text-anchor: end; }
+.d-head { fill: var(--ink); }
+.hatch-line { stroke: var(--ink-2); stroke-width: 1; }
+.bmd-fill { fill: var(--accent); fill-opacity: .45; stroke: var(--accent-line); stroke-width: 1.6; stroke-linejoin: round; }
+.bmd-ord { fill: none; stroke: var(--accent-line); stroke-width: 1; }
+.bmd-val { fill: var(--ink); font-family: var(--font-body); font-weight: 600; font-size: 12px; text-anchor: middle; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .d-text { font-size: 16px; }
+  .bmd-val { font-size: 15px; }
+  .d-letter { font-size: 17px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .load { animation: load-drop .6s .15s cubic-bezier(.2, .8, .2, 1) both; }
+  .bmd { transform-box: view-box; transform-origin: 280px 126px; animation: bmd-grow 1.1s .6s cubic-bezier(.2, .8, .2, 1) both; }
+  .bmd-vals { animation: fade-in .4s 1.5s ease-out both; }
+}
+@keyframes load-drop { from { transform: translateY(-16px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes bmd-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* Sections */
+.section { padding-block: clamp(64px, 8vw, 112px); }
+.section.alt { background: var(--paper-2); }
+.section-head {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 16px 72px; align-items: end; margin-bottom: clamp(32px, 4vw, 52px);
+}
+.section-head h2 { font-size: var(--fs-lg); font-stretch: 112%; font-weight: 800; line-height: 1.08; }
+:root[lang="ar"] .section-head h2 { line-height: 1.35; font-weight: 700; }
+.section-head p { color: var(--ink-2); max-width: 40em; }
+@media (max-width: 900px) { .section-head { grid-template-columns: minmax(0, 1fr); } }
+
+/* Services schedule */
+.schedule-wrap { border-top: 3px solid var(--ink); }
+.schedule { width: 100%; border-collapse: collapse; }
+.schedule th {
+  text-align: start; font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 600; color: var(--ink-2);
+  padding-block: 12px; padding-inline: 0 24px; border-bottom: 1.5px solid var(--ink);
+}
+.schedule th:nth-child(1) { width: 38%; }
+.schedule th:nth-child(2) { width: 44%; }
+.schedule td { vertical-align: top; padding-block: 22px; padding-inline: 0 24px; border-bottom: 1px solid var(--rule); }
+.svc-name { font-family: var(--font-display); font-stretch: 106%; font-size: 1.1875rem; font-weight: 700; line-height: 1.25; }
+.svc-desc { margin-top: 6px; color: var(--ink-2); font-size: .9375rem; }
+.schedule td.get { font-size: .9375rem; }
+.tag {
+  display: inline-block; font-size: .8125rem; font-weight: 600; line-height: 1.2;
+  padding: 6px 11px; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink);
+}
+.tag.site { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+@media (max-width: 760px) {
+  .schedule thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .schedule, .schedule tbody, .schedule tr, .schedule td { display: block; width: 100%; }
+  .schedule tr { padding-block: 20px; border-bottom: 1px solid var(--rule); }
+  .schedule td { padding: 0; border: 0; }
+  .schedule td + td { margin-top: 12px; }
+  .schedule td.get::before { content: attr(data-label); display: block; font-size: .8125rem; font-weight: 600; color: var(--ink-2); margin-bottom: 2px; }
+}
+
+/* Process beam */
+.beam { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.beam::before { content: ""; position: absolute; top: 0; inset-inline: 0; height: 10px; background: var(--ink); }
+.beam li { position: relative; padding-top: 54px; padding-inline-end: 28px; min-width: 0; }
+.beam li::before {
+  content: ""; position: absolute; top: 10px; inset-inline-start: 0;
+  width: 26px; height: 22px; background: var(--accent);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.beam li::after { content: ""; position: absolute; top: 33px; inset-inline-start: -5px; width: 36px; height: 2px; background: var(--ink); }
+.step-num { font-family: var(--font-display); font-stretch: 112%; font-weight: 800; font-size: 1rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.beam h3 { margin-top: 4px; font-size: 1.125rem; font-stretch: 106%; font-weight: 700; line-height: 1.25; }
+.beam p { margin-top: 8px; color: var(--ink-2); font-size: .9375rem; }
+@media (max-width: 860px) {
+  .beam { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .beam::before { top: 0; bottom: 0; inset-inline: 0 auto; width: 10px; height: auto; }
+  .beam li { padding-top: 0; padding-inline: 58px 0; }
+  .beam li::before { top: 4px; inset-inline-start: 10px; width: 22px; height: 26px; clip-path: polygon(0 50%, 100% 0, 100% 100%); }
+  :root[dir="rtl"] .beam li::before { clip-path: polygon(100% 50%, 0 0, 0 100%); }
+  .beam li::after { top: -1px; inset-inline-start: 33px; width: 2px; height: 36px; }
+}
+
+/* Prices */
+.prices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; border-top: 3px solid var(--ink); }
+.price-row { display: flex; align-items: flex-end; gap: 14px; padding-block: 22px; border-bottom: 1px solid var(--rule); min-width: 0; }
+.pr-text { flex: 0 1 auto; min-width: 0; }
+.pr-text h3 { font-size: 1.125rem; font-stretch: 106%; font-weight: 700; line-height: 1.25; }
+.pr-unit { margin-top: 4px; color: var(--ink-2); font-size: .875rem; }
+.pr-lead { flex: 1 1 24px; min-width: 24px; border-bottom: 2px dotted var(--rule); margin-bottom: .45em; }
+.price { flex: none; text-align: end; font-family: var(--font-display); font-stretch: 112%; font-weight: 800; font-size: 1.875rem; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.price .from { display: block; font-family: var(--font-body); font-stretch: 100%; font-size: .75rem; font-weight: 500; color: var(--ink-2); margin-bottom: 6px; }
+.price .unit { font-size: 1rem; font-weight: 700; margin-inline-start: 2px; }
+.price.quote { font-size: 1rem; font-weight: 700; white-space: normal; max-width: 9em; line-height: 1.25; }
+.prices-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; margin-top: 32px; }
+.prices-foot p { color: var(--ink-2); font-size: .9375rem; max-width: 46em; }
+@media (max-width: 760px) { .prices { grid-template-columns: minmax(0, 1fr); } .price { font-size: 1.625rem; } }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px 80px; }
+.about-copy h2 { font-size: var(--fs-lg); font-stretch: 112%; font-weight: 800; line-height: 1.08; }
+:root[lang="ar"] .about-copy h2 { line-height: 1.35; font-weight: 700; }
+.about-copy p { margin-top: 20px; font-size: 1.125rem; max-width: 36em; }
+.about-copy p + p { color: var(--ink-2); }
+.about-side { display: grid; gap: 36px; align-content: start; }
+.about-side h3 { font-size: 1rem; font-weight: 700; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
+.checks, .codes { list-style: none; margin: 0; padding: 0; }
+.checks li, .codes li { display: flex; gap: 14px; align-items: flex-start; padding-block: 12px; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
+.checks li::before {
+  content: ""; flex: none; width: 13px; height: 7px; margin-top: .5em;
+  border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg);
+}
+.codes b { font-family: var(--font-brand); font-stretch: 106%; font-weight: 700; min-width: 5.5em; direction: ltr; unicode-bidi: isolate; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact */
+.contact { background: var(--night); color: var(--on-night); }
+.contact :focus-visible { outline-color: var(--accent); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px 72px; align-items: start; }
+.contact h2 { font-size: var(--fs-lg); font-stretch: 112%; font-weight: 800; line-height: 1.08; }
+:root[lang="ar"] .contact h2 { line-height: 1.35; font-weight: 700; }
+.contact-intro { margin-top: 16px; color: var(--on-night-2); max-width: 30em; }
+.direct { margin-top: 32px; border-top: 1px solid var(--night-rule); }
+.direct-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding-block: 16px; border-bottom: 1px solid var(--night-rule); }
+.direct-row .lbl { width: 100%; font-size: .8125rem; color: var(--on-night-2); }
+.direct-row .val { font-family: var(--font-brand); font-stretch: 106%; font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: var(--on-night); text-decoration: none; overflow-wrap: anywhere; min-width: 0; }
+.direct-row .val:hover { text-decoration: underline; text-underline-offset: 4px; }
+.copy-btn {
+  margin-inline-start: auto; font-family: var(--font-body); font-size: .8125rem; font-weight: 600; line-height: 1;
+  background: transparent; color: var(--on-night); border: 1.5px solid var(--night-rule); border-radius: 4px; padding: 8px 12px; cursor: pointer;
+}
+.copy-btn:hover { border-color: var(--on-night-2); }
+.reply-note { margin-top: 20px; font-size: .875rem; color: var(--on-night-2); }
+
+.inquiry {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px;
+  padding: clamp(20px, 3vw, 32px);
+}
+.inquiry :focus-visible { outline-color: var(--focus); }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: .875rem; font-weight: 600; }
+.field input, .field select, .field textarea {
+  width: 100%; min-width: 0; font-family: inherit; font-size: 1rem; line-height: 1.4; color: var(--ink);
+  background: var(--paper); border: 1.5px solid var(--rule); border-radius: 4px; padding: 11px 12px;
+}
+.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--ink-2); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline-offset: 0; border-color: var(--ink); }
+.field textarea { min-height: 112px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: var(--ink-2); opacity: .75; }
+.form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.form-note { grid-column: 1 / -1; font-size: .8125rem; color: var(--ink-2); }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) { .inquiry { grid-template-columns: minmax(0, 1fr); } .form-actions .btn { flex: 1 1 100%; } }
+
+/* Footer title block */
+.site-footer { padding-block: 48px 104px; }
+.title-block {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, .7fr);
+  gap: 1.5px; background: var(--ink); border: 2px solid var(--ink);
+}
+.tb-cell { background: var(--paper); padding: 12px 14px; min-width: 0; }
+.tb-brand { grid-row: span 2; display: flex; align-items: center; gap: 12px; }
+.tb-cell .k { display: block; font-size: .75rem; color: var(--ink-2); margin-bottom: 3px; }
+.tb-cell .v { display: block; font-size: .9375rem; font-weight: 600; overflow-wrap: anywhere; }
+.footer-note { margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .8125rem; color: var(--ink-2); }
+@media (max-width: 760px) {
+  .title-block { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tb-brand { grid-column: 1 / -1; grid-row: auto; }
+  .tb-wide { grid-column: span 2; }
+}
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed; z-index: 35;
+  inset-inline-end: calc(18px + env(safe-area-inset-right, 0px));
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  width: 60px; height: 60px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--wa); color: var(--on-wa);
+  box-shadow: 0 6px 20px rgba(8, 17, 26, .28);
+  text-decoration: none;
+}
+.wa-float svg { width: 28px; height: 28px; }
+.wa-float:hover { transform: translateY(-1px); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="AWDE Engineering, back to top">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path class="m-support" d="M8 40.5 4.5 46h7zM40 40.5 36.5 46h7z"/>
+        <path class="m-truss" d="M8 40.5 24 9l16 31.5M13.1 30.5h21.8"/>
+        <circle class="m-joint" cx="24" cy="9" r="3.2"/>
+        <circle class="m-joint" cx="13.1" cy="30.5" r="2.6"/>
+        <circle class="m-joint" cx="34.9" cy="30.5" r="2.6"/>
+      </svg>
+      <span class="brand-text"><span class="brand-name">AWDE</span><span class="brand-sub">Engineering</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#process" data-i18n="nav_process">How it works</a>
+      <a href="#prices" data-i18n="nav_prices">Prices</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <button class="lang-btn" id="lang-toggle" type="button" lang="ar" aria-label="التبديل إلى العربية">عربي</button>
+    <a class="btn btn-primary btn-sm header-wa" data-wa href="https://wa.me/96170820910" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span data-i18n="header_wa">WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 data-i18n="hero_title">Structural design for your building, done online.</h1>
+        <p class="lede" data-i18n="hero_lede">Send your architectural plans on WhatsApp. We design the concrete or steel structure, check it for gravity and earthquake loads, and send you the calculations and drawings as PDF.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-wa href="https://wa.me/96170820910" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span data-i18n="hero_cta">Chat on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="#prices" data-i18n="hero_cta2">See prices</a>
+        </div>
+        <ul class="hero-notes">
+          <li data-i18n="hero_note1">Free quote within 48 hours</li>
+          <li data-i18n="hero_note2">New buildings and existing ones</li>
+          <li data-i18n="hero_note3">Clients in Lebanon and abroad</li>
+        </ul>
+      </div>
+
+      <figure class="hero-figure">
+        <svg class="drawing" viewBox="0 0 560 440" role="img" aria-labelledby="drawing-title">
+          <title id="drawing-title">Elevation of a three-storey concrete frame on grids A to D, with a uniform roof load and its bending moment diagram</title>
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line class="hatch-line" x1="0" y1="0" x2="0" y2="7"/>
+            </pattern>
+          </defs>
+
+          <!-- grid lines (chain lines) and bubbles -->
+          <path class="d-grid" d="M80 42V432M213.3 42V432M346.7 42V432M480 42V432"/>
+          <circle class="d-bubble" cx="80" cy="28" r="14"/>
+          <circle class="d-bubble" cx="213.3" cy="28" r="14"/>
+          <circle class="d-bubble" cx="346.7" cy="28" r="14"/>
+          <circle class="d-bubble" cx="480" cy="28" r="14"/>
+          <text class="d-letter" x="80" y="33">A</text>
+          <text class="d-letter" x="213.3" y="33">B</text>
+          <text class="d-letter" x="346.7" y="33">C</text>
+          <text class="d-letter" x="480" y="33">D</text>
+
+          <!-- foundation line -->
+          <rect x="56" y="383" width="448" height="11" fill="url(#hatch)"/>
+          <path class="d-thin" d="M56 383H504"/>
+
+          <!-- frame: columns and beams, 5.00 m bays, 3.20 m storeys -->
+          <path class="d-member" d="M80 382V126M213.3 382V126M346.7 382V126M480 382V126M80 126H480M80 211.3H480M80 296.7H480"/>
+
+          <!-- level markers -->
+          <g>
+            <path class="d-thin" d="M492 117h14l-7 9z M492 202.3h14l-7 9z M492 287.7h14l-7 9z M492 373h14l-7 9z"/>
+            <text class="d-text" x="512" y="122">+9.60</text>
+            <text class="d-text" x="512" y="207.3">+6.40</text>
+            <text class="d-text" x="512" y="292.7">+3.20</text>
+            <text class="d-text" x="512" y="378">±0.00</text>
+          </g>
+
+          <!-- dimension line -->
+          <path class="d-dim" d="M74 424H486M75 429l10-10M208.3 429l10-10M341.7 429l10-10M475 429l10-10"/>
+          <text class="d-text mid" x="146.7" y="417">5.00</text>
+          <text class="d-text mid" x="280" y="417">5.00</text>
+          <text class="d-text mid" x="413.3" y="417">5.00</text>
+
+          <!-- uniform roof load -->
+          <g class="load">
+            <path class="d-load" d="M80 72H480M80 72V92M106.7 72V92M133.3 72V92M160 72V92M186.7 72V92M213.3 72V92M240 72V92M266.7 72V92M293.3 72V92M320 72V92M346.7 72V92M373.3 72V92M400 72V92M426.7 72V92M453.3 72V92M480 72V92"/>
+            <path class="d-head" d="M76.5 91h7l-3.5 8zM103.2 91h7l-3.5 8zM129.8 91h7l-3.5 8zM156.5 91h7l-3.5 8zM183.2 91h7l-3.5 8zM209.8 91h7l-3.5 8zM236.5 91h7l-3.5 8zM263.2 91h7l-3.5 8zM289.8 91h7l-3.5 8zM316.5 91h7l-3.5 8zM343.2 91h7l-3.5 8zM369.8 91h7l-3.5 8zM396.5 91h7l-3.5 8zM423.2 91h7l-3.5 8zM449.8 91h7l-3.5 8zM476.5 91h7l-3.5 8z"/>
+            <text class="d-text end" x="480" y="63">w = 24 kN/m</text>
+          </g>
+
+          <!-- bending moment diagram on the roof beam (sagging drawn below, hogging above) -->
+          <g class="bmd">
+            <path class="bmd-ord" d="M106.7,126V130.7M120,126V135.2M133.3,126V137.5M146.7,126V137.7M160,126V135.7M173.3,126V131.6M200,126V116.8M226.7,126V115.9M240,126V123.5M253.3,126V128.9M266.7,126V132.1M280,126V133.2M293.3,126V132.1M306.7,126V128.9M320,126V123.5M333.3,126V115.9M360,126V116.8M386.7,126V131.6M400,126V135.7M413.3,126V137.7M426.7,126V137.5M440,126V135.2M453.3,126V130.7"/>
+            <path class="bmd-fill" d="M80,126 L80,115.2 L86.7,119.9 L93.3,124 L100,127.6 L106.7,130.7 L113.3,133.2 L120,135.2 L126.7,136.6 L133.3,137.5 L140,137.9 L146.7,137.7 L153.3,137 L160,135.7 L166.7,133.9 L173.3,131.6 L180,128.7 L186.7,125.3 L193.3,121.3 L200,116.8 L206.7,111.8 L213.3,106.2 L220,111.3 L226.7,115.9 L233.3,120 L240,123.5 L246.7,126.5 L253.3,128.9 L260,130.8 L266.7,132.1 L273.3,132.9 L280,133.2 L286.7,132.9 L293.3,132.1 L300,130.8 L306.7,128.9 L313.3,126.5 L320,123.5 L326.7,120 L333.3,115.9 L340,111.3 L346.7,106.2 L353.3,111.8 L360,116.8 L366.7,121.3 L373.3,125.3 L380,128.7 L386.7,131.6 L393.3,133.9 L400,135.7 L406.7,137 L413.3,137.7 L420,137.9 L426.7,137.5 L433.3,136.6 L440,135.2 L446.7,133.2 L453.3,130.7 L460,127.6 L466.7,124 L473.3,119.9 L480,115.2 L480,126 Z"/>
+          </g>
+          <g class="bmd-vals">
+            <text class="bmd-val" x="141" y="156">+33</text>
+            <text class="bmd-val" x="280" y="152">+20</text>
+            <text class="bmd-val" x="419" y="156">+33</text>
+            <text class="d-text" x="88" y="176">M (kN·m)</text>
+          </g>
+        </svg>
+        <figcaption data-i18n="fig_caption">Frame elevation on grid 2, with the bending moment under roof load. Every design starts from a model like this one.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="services_title">Services</h2>
+        <p data-i18n="services_intro">Design, checking and site work for concrete and steel buildings. Most of it happens online. Inspections need a site visit.</p>
+      </div>
+      <div class="schedule-wrap">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="th_service">Service</th>
+              <th scope="col" data-i18n="th_receive">What you receive</th>
+              <th scope="col" data-i18n="th_where">Where</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s1_name">Residential structural design</h3><p class="svc-desc" data-i18n="s1_desc">Villas, houses and apartment buildings in reinforced concrete, from foundations to roof.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s1_get">Structural model, calculation report, and drawings of foundations, columns, slabs and beams with reinforcement details.</td>
+              <td><span class="tag" data-i18n="where_online">Online</span></td>
+            </tr>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s2_name">Assessment and retrofitting</h3><p class="svc-desc" data-i18n="s2_desc">Cracks, corrosion, war or earthquake damage, or adding floors to an existing building.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s2_get">Site inspection, a condition report with photos, and a strengthening design using concrete jackets, steel or FRP.</td>
+              <td><span class="tag site" data-i18n="where_site">Site visit in Lebanon</span></td>
+            </tr>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s3_name">Steel structures</h3><p class="svc-desc" data-i18n="s3_desc">Warehouses, canopies, mezzanines and solar panel mounting structures.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s3_get">Member and connection design, base plates and anchor bolts, and general arrangement drawings.</td>
+              <td><span class="tag" data-i18n="where_online">Online</span></td>
+            </tr>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s4_name">Design checking</h3><p class="svc-desc" data-i18n="s4_desc">An independent review of another engineer's design, for owners, contractors and developers.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s4_get">A review report listing each issue found, with the code reference and the fix we recommend.</td>
+              <td><span class="tag" data-i18n="where_online">Online</span></td>
+            </tr>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s5_name">Online consultation</h3><p class="svc-desc" data-i18n="s5_desc">Talk through a crack, a renovation, removing a wall, or a contractor's proposal.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s5_get">A 45-minute video call on Google Meet or WhatsApp, with a written summary afterwards.</td>
+              <td><span class="tag" data-i18n="where_online">Online</span></td>
+            </tr>
+            <tr>
+              <td><h3 class="svc-name" data-i18n="s6_name">Support for engineering offices</h3><p class="svc-desc" data-i18n="s6_desc">Analysis models, design calculations and drafting for offices in Lebanon and abroad.</p></td>
+              <td class="get" data-label="What you receive" data-i18n="s6_get">Model files, calculation sheets and drawings in your office's format, checked before delivery.</td>
+              <td><span class="tag" data-i18n="where_online">Online</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="process_title">How it works online</h2>
+        <p data-i18n="process_intro">From your first message to the final drawings, without having to meet in person.</p>
+      </div>
+      <ol class="beam">
+        <li><span class="step-num">1</span><h3 data-i18n="p1_t">Message us on WhatsApp</h3><p data-i18n="p1_d">Tell us what you are building, where, and how many floors.</p></li>
+        <li><span class="step-num">2</span><h3 data-i18n="p2_t">Send your drawings</h3><p data-i18n="p2_d">Architectural plans as PDF or DWG, plus site photos if the building already exists.</p></li>
+        <li><span class="step-num">3</span><h3 data-i18n="p3_t">Get a fixed quote</h3><p data-i18n="p3_d">A clear price and timeline within 48 hours, free of charge.</p></li>
+        <li><span class="step-num">4</span><h3 data-i18n="p4_t">We design and check</h3><p data-i18n="p4_d">We model the structure, design every element and keep you updated as we go.</p></li>
+        <li><span class="step-num">5</span><h3 data-i18n="p5_t">Receive your files</h3><p data-i18n="p5_d">Calculation report and structural drawings as PDF, with one round of revisions included.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="prices">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="prices_title">Starting prices</h2>
+        <p data-i18n="prices_intro">Every building is different, so these are starting points. Send your plans and you get a fixed price before any work starts.</p>
+      </div>
+      <div class="prices">
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr1_n">Online consultation</h3><p class="pr-unit" data-i18n="pr1_u">45-minute video call</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price"><span class="from" data-i18n="from">from</span>$30</p>
+        </div>
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr2_n">Residential structural design</h3><p class="pr-unit" data-i18n="pr2_u">Per m² of built area</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price"><span class="from" data-i18n="from">from</span>$2.5<span class="unit">/m²</span></p>
+        </div>
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr3_n">Steel structures</h3><p class="pr-unit" data-i18n="pr3_u">Per structure, depending on size</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price"><span class="from" data-i18n="from">from</span>$250</p>
+        </div>
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr4_n">Design checking</h3><p class="pr-unit" data-i18n="pr4_u">Per m² of built area</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price"><span class="from" data-i18n="from">from</span>$1<span class="unit">/m²</span></p>
+        </div>
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr5_n">Inspection and condition report</h3><p class="pr-unit" data-i18n="pr5_u">Per visit in Lebanon, report included</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price"><span class="from" data-i18n="from">from</span>$150</p>
+        </div>
+        <div class="price-row">
+          <div class="pr-text"><h3 data-i18n="pr6_n">Retrofitting and adding floors</h3><p class="pr-unit" data-i18n="pr6_u">Depends on the condition of the building</p></div>
+          <span class="pr-lead" aria-hidden="true"></span>
+          <p class="price quote" data-i18n="quoted">Quoted after inspection</p>
+        </div>
+      </div>
+      <div class="prices-foot">
+        <p data-i18n="prices_note">Prices in US dollars. Pay 50% to start and 50% before the final files. Bank transfer, Whish or OMT.</p>
+        <a class="btn btn-ghost" href="#contact" data-i18n="prices_cta">Ask for a fixed quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <h2 data-i18n="about_title">About AWDE Engineering</h2>
+        <p data-i18n="about_p1">AWDE Engineering is a structural engineering practice led by Eng. Mohammad Awde. We work with architects, contractors and building owners to design new structures and assess existing ones.</p>
+        <p data-i18n="about_p2">We work online, so you get clear answers quickly wherever your project is. We keep structures simple and economical to build, without cutting anything that keeps them safe.</p>
+      </div>
+      <div class="about-side">
+        <div>
+          <h3 data-i18n="checks_title">Every project gets</h3>
+          <ul class="checks">
+            <li data-i18n="a1">A structure checked for gravity, wind and earthquake loads</li>
+            <li data-i18n="a2">Calculations a reviewer can follow line by line</li>
+            <li data-i18n="a3">Drawings your contractor can build from</li>
+            <li data-i18n="a4">Direct contact with the engineer who designed it</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="codes_title">Design codes</h3>
+          <ul class="codes">
+            <li><b>ACI 318</b><span data-i18n="c1">Reinforced concrete</span></li>
+            <li><b>AISC 360</b><span data-i18n="c2">Structural steel</span></li>
+            <li><b>ASCE 7</b><span data-i18n="c3">Loads, including earthquakes</span></li>
+            <li><b>Eurocode</b><span data-i18n="c4">On request</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 data-i18n="contact_title">Start your project</h2>
+        <p class="contact-intro" data-i18n="contact_intro">Fill in the form and it opens in WhatsApp, ready to send. Or reach us directly.</p>
+        <div class="direct">
+          <div class="direct-row">
+            <span class="lbl" data-i18n="lbl_whatsapp">WhatsApp and phone</span>
+            <a class="val" id="phone-val" data-wa href="https://wa.me/96170820910" target="_blank" rel="noopener"><span dir="ltr">+961 70 820 910</span></a>
+            <button class="copy-btn" type="button" data-copy="+96170820910" data-target="phone-val" data-i18n="copy">Copy</button>
+          </div>
+          <div class="direct-row">
+            <span class="lbl" data-i18n="lbl_email">Email</span>
+            <a class="val" id="email-val" href="mailto:mohammadawde47@gmail.com"><span dir="ltr">mohammadawde47@gmail.com</span></a>
+            <button class="copy-btn" type="button" data-copy="mohammadawde47@gmail.com" data-target="email-val" data-i18n="copy">Copy</button>
+          </div>
+        </div>
+        <p class="reply-note" data-i18n="reply_note">We reply the same day, Monday to Saturday.</p>
+      </div>
+
+      <form class="inquiry" id="inquiry" novalidate>
+        <div class="field">
+          <label for="f-name" data-i18n="f_name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-type" data-i18n="f_type">Project type</label>
+          <select id="f-type" name="type">
+            <option value="" data-i18n="opt_choose">Choose one</option>
+            <option value="villa" data-i18n="opt_villa">Villa or house</option>
+            <option value="building" data-i18n="opt_building">Apartment building</option>
+            <option value="steel" data-i18n="opt_steel">Steel structure</option>
+            <option value="assess" data-i18n="opt_assess">Assessment or retrofitting</option>
+            <option value="check" data-i18n="opt_check">Design checking</option>
+            <option value="consult" data-i18n="opt_consult">Online consultation</option>
+            <option value="other" data-i18n="opt_other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-loc" data-i18n="f_loc">Location</label>
+          <input id="f-loc" name="location" type="text" placeholder="e.g. Tyre, South Lebanon" data-i18n-ph="ph_loc">
+        </div>
+        <div class="field">
+          <label for="f-size" data-i18n="f_size">Size</label>
+          <input id="f-size" name="size" type="text" placeholder="e.g. 3 floors, 450 m²" data-i18n-ph="ph_size">
+        </div>
+        <div class="field full">
+          <label for="f-msg" data-i18n="f_msg">Details</label>
+          <textarea id="f-msg" name="message" placeholder="What do you need designed or checked?" data-i18n-ph="ph_msg"></textarea>
+        </div>
+        <div class="form-actions">
+          <a class="btn btn-primary" id="send-wa" href="https://wa.me/96170820910" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span data-i18n="send_wa">Send on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" id="send-mail" href="mailto:mohammadawde47@gmail.com" data-i18n="send_mail">Send by email</a>
+        </div>
+        <p class="form-note" data-i18n="form_note">Your message opens in WhatsApp or your email app for you to send. This site does not store anything you type.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="title-block">
+      <div class="tb-cell tb-brand">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path class="m-support" d="M8 40.5 4.5 46h7zM40 40.5 36.5 46h7z"/>
+          <path class="m-truss" d="M8 40.5 24 9l16 31.5M13.1 30.5h21.8"/>
+          <circle class="m-joint" cx="24" cy="9" r="3.2"/>
+          <circle class="m-joint" cx="13.1" cy="30.5" r="2.6"/>
+          <circle class="m-joint" cx="34.9" cy="30.5" r="2.6"/>
+        </svg>
+        <span class="brand-text"><span class="brand-name">AWDE</span><span class="brand-sub">Engineering</span></span>
+      </div>
+      <div class="tb-cell"><span class="k" data-i18n="tb_project">Project</span><span class="v" data-i18n="tb_project_v">Your next building</span></div>
+      <div class="tb-cell"><span class="k" data-i18n="tb_engineer">Engineer</span><span class="v" data-i18n="tb_engineer_v">Eng. Mohammad Awde</span></div>
+      <div class="tb-cell"><span class="k" data-i18n="tb_sheet">Sheet</span><span class="v">S-001</span></div>
+      <div class="tb-cell"><span class="k" data-i18n="lbl_whatsapp_short">WhatsApp</span><span class="v" dir="ltr">+961 70 820 910</span></div>
+      <div class="tb-cell tb-wide"><span class="k" data-i18n="lbl_email">Email</span><span class="v" dir="ltr">mohammadawde47@gmail.com</span></div>
+      <div class="tb-cell tb-wide"><span class="k" data-i18n="tb_date">Date</span><span class="v">2026</span></div>
+    </div>
+    <div class="footer-note">
+      <span data-i18n="rights">© 2026 AWDE Engineering. All rights reserved.</span>
+      <span data-i18n="based">Based in Lebanon, working online.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="https://wa.me/96170820910" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-i18n-aria="float_aria">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<script>
+(function () {
+  var PHONE = "96170820910";
+  var EMAIL = "mohammadawde47@gmail.com";
+  var root = document.documentElement;
+
+  var AR = {
+    nav_services: "الخدمات",
+    nav_process: "كيف نعمل",
+    nav_prices: "الأسعار",
+    nav_about: "من نحن",
+    nav_contact: "تواصل معنا",
+    header_wa: "واتساب",
+    hero_title: "تصميم إنشائي لمبناك، أونلاين بالكامل.",
+    hero_lede: "أرسل مخططاتك المعمارية عبر واتساب. نصمّم الهيكل الإنشائي من الخرسانة أو الحديد، ونتحقق من سلامته تحت الأحمال الرأسية وأحمال الزلازل، ثم نرسل لك الحسابات والمخططات بصيغة PDF.",
+    hero_cta: "تواصل معنا على واتساب",
+    hero_cta2: "شاهد الأسعار",
+    hero_note1: "عرض سعر مجاني خلال 48 ساعة",
+    hero_note2: "مبانٍ جديدة ومبانٍ قائمة",
+    hero_note3: "عملاء في لبنان والخارج",
+    fig_caption: "مقطع رأسي للإطار على المحور 2، مع مخطط عزم الانحناء تحت حمل السقف. كل تصميم يبدأ من نموذج كهذا.",
+    services_title: "الخدمات",
+    services_intro: "تصميم وتدقيق وكشف ميداني للمباني الخرسانية والحديدية. معظم العمل يتم أونلاين، أما الكشف فيتطلب زيارة الموقع.",
+    th_service: "الخدمة",
+    th_receive: "ماذا تستلم",
+    th_where: "أين",
+    s1_name: "التصميم الإنشائي للمباني السكنية",
+    s1_desc: "فلل ومنازل ومبانٍ سكنية من الخرسانة المسلحة، من الأساسات حتى السطح.",
+    s1_get: "نموذج إنشائي، تقرير حسابات، ومخططات الأساسات والأعمدة والبلاطات والجسور مع تفاصيل التسليح.",
+    s2_name: "تقييم المباني وتدعيمها",
+    s2_desc: "تشققات، صدأ حديد التسليح، أضرار الحرب أو الزلازل، أو إضافة طوابق إلى مبنى قائم.",
+    s2_get: "كشف ميداني، تقرير حالة مع صور، وتصميم تدعيم بالتغليف الخرساني أو الحديد أو ألياف FRP.",
+    s3_name: "المنشآت الحديدية",
+    s3_desc: "مستودعات، مظلات، طوابق ميزانين، وهياكل تثبيت الألواح الشمسية.",
+    s3_get: "تصميم العناصر والوصلات، ألواح القاعدة وبراغي التثبيت، ومخططات عامة للمنشأ.",
+    s4_name: "تدقيق التصاميم",
+    s4_desc: "مراجعة مستقلة لتصميم مهندس آخر، لأصحاب المشاريع والمقاولين والمطوّرين.",
+    s4_get: "تقرير مراجعة يذكر كل ملاحظة مع المرجع من الكود والحل الذي نقترحه.",
+    s5_name: "استشارة أونلاين",
+    s5_desc: "ناقش معنا تشققاً، أو ترميماً، أو إزالة جدار، أو عرضاً من مقاول.",
+    s5_get: "مكالمة فيديو لمدة 45 دقيقة عبر Google Meet أو واتساب، مع ملخص مكتوب بعدها.",
+    s6_name: "دعم المكاتب الهندسية",
+    s6_desc: "نماذج تحليل، حسابات تصميم، ورسم مخططات لمكاتب في لبنان والخارج.",
+    s6_get: "ملفات النماذج، أوراق الحسابات، والمخططات بصيغة مكتبك، مدقّقة قبل التسليم.",
+    where_online: "أونلاين",
+    where_site: "زيارة موقع في لبنان",
+    process_title: "كيف نعمل أونلاين",
+    process_intro: "من أول رسالة حتى المخططات النهائية، من دون الحاجة إلى لقاء شخصي.",
+    p1_t: "راسلنا على واتساب",
+    p1_d: "أخبرنا ماذا تبني، وأين، وكم عدد الطوابق.",
+    p2_t: "أرسل مخططاتك",
+    p2_d: "المخططات المعمارية بصيغة PDF أو DWG، مع صور الموقع إذا كان المبنى قائماً.",
+    p3_t: "احصل على سعر ثابت",
+    p3_d: "سعر واضح ومدة تنفيذ خلال 48 ساعة، مجاناً.",
+    p4_t: "نصمّم وندقّق",
+    p4_d: "ننمذج المبنى ونصمّم كل عنصر ونطلعك على سير العمل أولاً بأول.",
+    p5_t: "استلم ملفاتك",
+    p5_d: "تقرير الحسابات والمخططات الإنشائية بصيغة PDF، مع جولة تعديلات واحدة مشمولة.",
+    prices_title: "الأسعار الابتدائية",
+    prices_intro: "كل مبنى مختلف، لذلك هذه أسعار ابتدائية. أرسل مخططاتك لتحصل على سعر ثابت قبل بدء أي عمل.",
+    pr1_n: "استشارة أونلاين",
+    pr1_u: "مكالمة فيديو 45 دقيقة",
+    pr2_n: "التصميم الإنشائي السكني",
+    pr2_u: "لكل متر مربع من المساحة المبنية",
+    pr3_n: "المنشآت الحديدية",
+    pr3_u: "لكل منشأ، حسب الحجم",
+    pr4_n: "تدقيق التصاميم",
+    pr4_u: "لكل متر مربع من المساحة المبنية",
+    pr5_n: "كشف ميداني وتقرير حالة",
+    pr5_u: "لكل زيارة في لبنان، مع التقرير",
+    pr6_n: "التدعيم وإضافة الطوابق",
+    pr6_u: "حسب حالة المبنى",
+    from: "ابتداءً من",
+    quoted: "يُسعَّر بعد الكشف",
+    prices_note: "الأسعار بالدولار الأميركي. تُدفع 50% عند البدء و50% قبل تسليم الملفات النهائية، عبر تحويل مصرفي أو Whish أو OMT.",
+    prices_cta: "اطلب سعراً ثابتاً",
+    about_title: "عن AWDE Engineering",
+    about_p1: "AWDE Engineering مكتب هندسة إنشائية يديره المهندس محمد عوده. نعمل مع المعماريين والمقاولين وأصحاب المباني على تصميم المنشآت الجديدة وتقييم المباني القائمة.",
+    about_p2: "نعمل أونلاين، لتحصل على إجابات واضحة وسريعة أينما كان مشروعك. نصمّم منشآت بسيطة واقتصادية في التنفيذ، من دون التنازل عن أي شيء يحفظ سلامتها.",
+    checks_title: "كل مشروع يحصل على",
+    a1: "هيكل مدقَّق تحت الأحمال الرأسية والرياح والزلازل",
+    a2: "حسابات واضحة يستطيع أي مراجع تتبّعها سطراً بسطر",
+    a3: "مخططات جاهزة ليبني منها المقاول",
+    a4: "تواصل مباشر مع المهندس الذي صمّمه",
+    codes_title: "كودات التصميم",
+    c1: "الخرسانة المسلحة",
+    c2: "المنشآت الحديدية",
+    c3: "الأحمال، بما فيها الزلازل",
+    c4: "عند الطلب",
+    contact_title: "ابدأ مشروعك",
+    contact_intro: "املأ النموذج وسيفتح في واتساب جاهزاً للإرسال، أو تواصل معنا مباشرة.",
+    lbl_whatsapp: "واتساب وهاتف",
+    lbl_whatsapp_short: "واتساب",
+    lbl_email: "البريد الإلكتروني",
+    copy: "نسخ",
+    reply_note: "نرد في اليوم نفسه، من الاثنين إلى السبت.",
+    f_name: "اسمك",
+    f_type: "نوع المشروع",
+    opt_choose: "اختر",
+    opt_villa: "فيلا أو منزل",
+    opt_building: "مبنى سكني",
+    opt_steel: "منشأ حديدي",
+    opt_assess: "تقييم أو تدعيم",
+    opt_check: "تدقيق تصميم",
+    opt_consult: "استشارة أونلاين",
+    opt_other: "غير ذلك",
+    f_loc: "الموقع",
+    ph_loc: "مثلاً: صور، جنوب لبنان",
+    f_size: "الحجم",
+    ph_size: "مثلاً: 3 طوابق، 450 م²",
+    f_msg: "التفاصيل",
+    ph_msg: "ما الذي تحتاج تصميمه أو تدقيقه؟",
+    send_wa: "أرسل عبر واتساب",
+    send_mail: "أرسل عبر البريد",
+    form_note: "تُفتح رسالتك في واتساب أو تطبيق البريد لترسلها بنفسك. هذا الموقع لا يحفظ أي شيء تكتبه.",
+    tb_project: "المشروع",
+    tb_project_v: "مبناك القادم",
+    tb_engineer: "المهندس",
+    tb_engineer_v: "م. محمد عوده",
+    tb_sheet: "اللوحة",
+    tb_date: "التاريخ",
+    rights: "© 2026 AWDE Engineering. جميع الحقوق محفوظة.",
+    based: "مقرّنا في لبنان، ونعمل أونلاين.",
+    float_aria: "تواصل معنا على واتساب"
+  };
+
+  var MSG = {
+    en: {
+      hello: "Hello AWDE Engineering,",
+      fallback: "Hello AWDE Engineering, I would like a quote for a structural project.",
+      name: "Name", type: "Project", loc: "Location", size: "Size", msg: "Details",
+      subject: "Project inquiry", copy: "Copy", copied: "Copied", selected: "Selected",
+      toggle: "عربي", toggleLang: "ar", toggleAria: "التبديل إلى العربية", receive: "What you receive"
+    },
+    ar: {
+      hello: "مرحباً AWDE Engineering،",
+      fallback: "مرحباً AWDE Engineering، أود الحصول على عرض سعر لمشروع إنشائي.",
+      name: "الاسم", type: "المشروع", loc: "الموقع", size: "الحجم", msg: "التفاصيل",
+      subject: "استفسار عن مشروع", copy: "نسخ", copied: "تم النسخ", selected: "تم التحديد",
+      toggle: "English", toggleLang: "en", toggleAria: "Switch to English", receive: "ماذا تستلم"
+    }
+  };
+
+  var lang = "en";
+  var textNodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n]"));
+  var phNodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-ph]"));
+  var ariaNodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-aria]"));
+  var EN = {}, EN_PH = {}, EN_ARIA = {};
+  textNodes.forEach(function (n) { if (!(n.dataset.i18n in EN)) EN[n.dataset.i18n] = n.innerHTML; });
+  phNodes.forEach(function (n) { EN_PH[n.dataset.i18nPh] = n.getAttribute("placeholder"); });
+  ariaNodes.forEach(function (n) { EN_ARIA[n.dataset.i18nAria] = n.getAttribute("aria-label"); });
+
+  function waUrl(text) { return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text); }
+
+  function updateWaLinks() {
+    var href = waUrl(MSG[lang].fallback);
+    document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = href; });
+  }
+
+  var form = document.getElementById("inquiry");
+  var sendWa = document.getElementById("send-wa");
+  var sendMail = document.getElementById("send-mail");
+
+  function compose() {
+    var L = MSG[lang];
+    var val = function (id) { return document.getElementById(id).value.trim(); };
+    var sel = document.getElementById("f-type");
+    var type = sel.selectedIndex > 0 ? sel.options[sel.selectedIndex].text : "";
+    var lines = [];
+    if (val("f-name")) lines.push(L.name + ": " + val("f-name"));
+    if (type) lines.push(L.type + ": " + type);
+    if (val("f-loc")) lines.push(L.loc + ": " + val("f-loc"));
+    if (val("f-size")) lines.push(L.size + ": " + val("f-size"));
+    if (val("f-msg")) lines.push(L.msg + ": " + val("f-msg"));
+    var text = lines.length ? [L.hello].concat(lines).join("\n") : L.fallback;
+    sendWa.href = waUrl(text);
+    sendMail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(L.subject + (type ? ": " + type : "")) + "&body=" + encodeURIComponent(text);
+  }
+
+  function setLang(next) {
+    lang = next === "ar" ? "ar" : "en";
+    root.setAttribute("lang", lang);
+    root.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    textNodes.forEach(function (n) {
+      var key = n.dataset.i18n;
+      var v = lang === "ar" ? AR[key] : EN[key];
+      if (v != null) n.innerHTML = v;
+    });
+    phNodes.forEach(function (n) {
+      var key = n.dataset.i18nPh;
+      n.setAttribute("placeholder", lang === "ar" ? (AR[key] || EN_PH[key]) : EN_PH[key]);
+    });
+    ariaNodes.forEach(function (n) {
+      var key = n.dataset.i18nAria;
+      n.setAttribute("aria-label", lang === "ar" ? (AR[key] || EN_ARIA[key]) : EN_ARIA[key]);
+    });
+    document.querySelectorAll("td.get").forEach(function (td) { td.setAttribute("data-label", MSG[lang].receive); });
+    var btn = document.getElementById("lang-toggle");
+    btn.textContent = MSG[lang].toggle;
+    btn.setAttribute("lang", MSG[lang].toggleLang);
+    btn.setAttribute("aria-label", MSG[lang].toggleAria);
+    updateWaLinks();
+    compose();
+    try { localStorage.setItem("awde-lang", lang); } catch (e) {}
+  }
+
+  document.getElementById("lang-toggle").addEventListener("click", function () {
+    setLang(lang === "ar" ? "en" : "ar");
+  });
+
+  form.addEventListener("input", compose);
+  form.addEventListener("change", compose);
+  form.addEventListener("submit", function (e) { e.preventDefault(); compose(); sendWa.click(); });
+
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy");
+      var flash = function (label) {
+        btn.textContent = label;
+        setTimeout(function () { btn.textContent = MSG[lang].copy; }, 1800);
+      };
+      var selectTarget = function () {
+        var el = document.getElementById(btn.getAttribute("data-target"));
+        if (!el) return;
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(range);
+        flash(MSG[lang].selected);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flash(MSG[lang].copied); }, selectTarget);
+      } else {
+        selectTarget();
+      }
+    });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem("awde-lang"); } catch (e) {}
+  setLang(saved === "ar" ? "ar" : "en");
+})();
+</script>
+</body>
+</html>
